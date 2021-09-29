@@ -3,13 +3,17 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: My first own action to say hello
     steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Hello world action step
+        uses: ./ # Uses an action in the root directory
         id: hello
-        uses: m7madsh55/hello-world-javascript-action@v1.2
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Rupesh Tiwari'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+        run: echo "The time was $"
