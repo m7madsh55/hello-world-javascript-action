@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world action step
-        uses: actions/hello-world-javascript-action@v1.1
+        uses: m7madsh55/hello-world-javascript-action@v1.1
         id: hello
         with:
           who-to-greet: 'Rupesh Tiwari'
